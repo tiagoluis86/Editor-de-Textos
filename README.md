@@ -1,2 +1,2 @@
 # Editor-de-Textos
-Feito maizena e Python
+Feito com maizena e Python
