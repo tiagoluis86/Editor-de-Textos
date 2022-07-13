@@ -1,2 +1,2 @@
 # Editor-de-Textos
-Feito com Tkinter
+Feito maizena e Python
