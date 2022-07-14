@@ -1,6 +1,7 @@
-from tkinter import Tk, Frame, Menu, Button
+from tkinter import Tk, Frame, Menu, Button, Text
 import time 
-
+from about import openAbout
+from tkinter import filedialog as fd
 #root window
 
 root = Tk() 
@@ -13,6 +14,7 @@ root.title('Bloco de Notas')
 menubar = Menu(root) 
 root.config(menu=menubar)
 
+
 #criação do menu arquivo
 
 arquivo_menu = Menu(   
@@ -22,7 +24,7 @@ arquivo_menu = Menu(
 
 #itens do menu arquivo
 arquivo_menu.add_command(label="Novo")
-arquivo_menu.add_command(label="Abrir")
+arquivo_menu.add_command(label="Abrir", command=fd.askopenfilename)
 arquivo_menu.add_command(label="Salvar")
 arquivo_menu.add_command(label="Salvar Como...")
 arquivo_menu.add_command(label="Imprimir")
@@ -79,13 +81,18 @@ ajuda_menu = Menu(
 )
 
 ajuda_menu.add_command(label="Ajuda")
-ajuda_menu.add_command(label="Sobre")
+ajuda_menu.add_command(label="Sobre", command=openAbout)
 
 menubar.add_cascade(
     label="Ajuda",
     menu=ajuda_menu
 )
 
+
+# caixa de texto
+
+TextField = Text(root, bg="white", height=100, width=120)
+TextField.pack()
 
 root.mainloop()
 
